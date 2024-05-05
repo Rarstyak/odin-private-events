@@ -16,6 +16,11 @@ Event
 - location as a string
 - date as date
 
+event_attending
+class EventAttending
+belongs_to :event_attended, class_name: "User
+belongs_to :attendee, class_name: "User
+
 ## Views
 
 User
@@ -43,9 +48,10 @@ bundle add devise
 rails generate devise:install
 rails g devise User username:string email:string password:string
 -> has_many events
+rails g controller Users show
+```
 
-rails g controller Users new create show
-
+``` not used yet
 rails g devise:views users
 -> requires config/initializers/devise.rb to have "config.scoped_views = true"
 ```
@@ -54,5 +60,5 @@ rails g devise:views users
 rails g model Event title:string date:date location:text body:text
 -> manually add foreign keys and validations
 
-rails g controller Events new create index show edit update destroy
+rails g controller Events index
 ```
