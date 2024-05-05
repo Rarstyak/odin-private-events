@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'events/new'
+  get 'events/create'
+  get 'events/index'
+  get 'events/show'
+  get 'events/edit'
+  get 'events/update'
+  get 'events/destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -6,5 +14,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "events#index"
 end
