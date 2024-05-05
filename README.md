@@ -1,56 +1,24 @@
 # README
 
-This is my solution to ruby on rails [Private Events](https://www.theodinproject.com/lessons/ruby-on-rails-private-events) project for [The Odin Project](https://www.theodinproject.com/).
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-It is intended to replicate Eventbrite at a basic level, showcasing knowledge of Active Record.
+Things you may want to cover:
 
-## Models
+* Ruby version
 
-User
-- can create (event)s
-- control w Devise
+* System dependencies
 
-Event
-- has creator (user)
-- attended by many attendees (user)
-- location as a string
-- date as date
+* Configuration
 
-## Views
+* Database creation
 
-User
-- show (list all events by that user), (list all attended events; then separate by past and future)
+* Database initialization
 
-Event
-- index (list of all), (separate by past and future)
-- create form
-- show (details of event), (list of attendees)
+* How to run the test suite
 
-## Other Tasks
+* Services (job queues, cache servers, search engines, etc.)
 
-- Refactor into scopes
-- Navagation links
+* Deployment instructions
 
-## Extra Tasks
-
-- allow users to edit and delete events they create
-- allow users to remove themselves as an attendee to their attended_events
-- make each event private and add the functionality for the event creator to invite specific users to an event
-
-```
-rails g model Event title:string date:date location:text body:text
--> manually add foreign keys and validations
-
-rails g controller Events new create index show edit update destroy
-```
-
-```
-bundle add devise
-rails g devise User username:string email:string password:string
--> has_many events
-
-rails g controller Users new create show
-
-rails g devise:views users
--> requires config/initializers/devise.rb to have "config.scoped_views = true"
-```
+* ...
