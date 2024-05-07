@@ -6,6 +6,8 @@ class CreateEvents < ActiveRecord::Migration[7.1]
       t.text :location
       t.text :body
 
+      t.belongs_to :creator, foreign_key: {to_table: :users}
+
       t.timestamps
     end
   end

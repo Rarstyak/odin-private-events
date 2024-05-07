@@ -16,7 +16,7 @@
     <p class="login">
       Login Bar
       <%- if (user_signed_in?) %>
-        <%= current_user.username %>
+        <%= link_to current_user.username, @current_user %>
         <%= button_to("Log out", destroy_user_session_path, method: :delete) %>
       <% else %>
         <%= link_to "Log in", new_session_path("user") %>
