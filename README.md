@@ -60,5 +60,5 @@ rails g devise:views users
 rails g model Event title:string date:date location:text body:text
 -> manually add foreign keys and validations
 
-rails g controller Events index
+rails g controller Events create index
 ```
