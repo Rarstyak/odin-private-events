@@ -1,0 +1,19 @@
+<h1>Events#new</h1>
+<p>Find me in app/views/events/new.html.erb</p>
+
+<%= form_with model: @event do |form| %>
+  <%= form.label :title, "Title:" %>
+  <%= form.text_field :title %>
+  <br>
+  <%= form.label :date, "Date:" %>
+  <%= form.date_select :date %>
+  <br>
+  <%= form.label :location, "Location:" %>
+  <%= form.text_field :location %>
+  <br>
+  <%= form.label :body, "Body:" %>
+  <%= form.text_field :body %>
+  <br>
+  <%= form.hidden_field :creator_id, value: current_user.id %>
+  <%= form.submit "Create" %>
+<% end %>

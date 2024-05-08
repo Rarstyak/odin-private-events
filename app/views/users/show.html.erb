@@ -5,7 +5,7 @@
   <ul>
     <% @userEvents.each do |event| %>
       <li>
-        <%= event.title + ':' + event.date + ':' + event.location %>
+        <%= event.title + ':' + event.date.to_s + ':' + event.location %>
       </li>
     <% end %>
   </ul>

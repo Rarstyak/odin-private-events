@@ -60,5 +60,12 @@ rails g devise:views users
 rails g model Event title:string date:date location:text body:text
 -> manually add foreign keys and validations
 
-rails g controller Events create index
+rails g controller Events new create index show
+```
+
+```
+https://stackoverflow.com/questions/4116067/purge-or-recreate-a-ruby-on-rails-database
+
+alias remigrate="rake db:drop && rake db:create && rake db:migrate && rake db:schema:dump && rake db:test:prepare"
+
 ```
