@@ -1,11 +1,28 @@
 <h1><%= @user.username %> User Dashboard</h1>
 
 <h2>Hosted Events</h2>
+
+<% if (user_signed_in? and current_user.id == @user.id) %>
+  <%= button_to("Host New Event", new_event_path, method: :get) %>
+<% end %>
+
 <div id="events">
   <ul>
-    <% @userEvents.each do |event| %>
+    <% @user_events.each do |event| %>
       <li>
         <%= event.title + ':' + event.date.to_s + ':' + event.location %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<h2>Attended Events</h2>
+
+<div id="attended_events">
+  <ul>
+    <% @event_attendings.each do |ea| %>
+      <li>
+        <%= ea.attended_event.title %>
       </li>
     <% end %>
   </ul>

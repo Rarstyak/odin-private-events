@@ -9,4 +9,7 @@ class User < ApplicationRecord
   validates :password,  presence: true, length: { mimimun: 6, maximum: 16 }
 
   has_many :created_events, foreign_key: :creator_id, class_name: "Event"
+
+  has_many :event_attendings, foreign_key: :attendee
+  has_many :attended_events, through: :event_attendings
 end

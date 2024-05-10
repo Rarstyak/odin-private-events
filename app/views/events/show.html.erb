@@ -1,4 +1,21 @@
 <h1>Events#show</h1>
 <p>Find me in app/views/events/show.html.erb</p>
 
-<%= @event.title + ':' + @event.date.to_s + ':' + @event.location %>
+<h2><%= @event.title %></h2>
+
+<p>Date: <%= @event.date.to_s %></p>
+<p>Location: <%= @event.location %></p>
+<br>
+<p>Details: <%= @event.body %></p>
+
+<h2>Attendees</h2>
+
+<div id="attendees">
+  <ul>
+    <% @event_attendings.each do |ea| %>
+      <li>
+        <%= ea.attendee.username %>
+      </li>
+    <% end %>
+  </ul>
+</div>

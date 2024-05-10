@@ -31,6 +31,10 @@ Event
 - create form
 - show (details of event), (list of attendees)
 
+EventAttending
+belongs_to :attendee, class_name: "User"
+belongs_to :attended_event, class_name: "Event"
+
 ## Other Tasks
 
 - Refactor into scopes
@@ -61,6 +65,13 @@ rails g model Event title:string date:date location:text body:text
 -> manually add foreign keys and validations
 
 rails g controller Events new create index show
+```
+
+```
+rails g model EventAttending
+rails g controller EventAttendings new create show edit update destroy
+
+-> manually add foreign keys
 ```
 
 ```

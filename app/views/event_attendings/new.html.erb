@@ -1,0 +1,15 @@
+<h1>EventAttendings#new</h1>
+<p>Find me in app/views/event_attendings/new.html.erb</p>
+
+<%= form_with model: @event do |form| %>
+  <%= form.label :attendee_id, "Attendee:" %>
+  <%= form.select :attendee_id, User.all.collect { |u| [ u.username, u.id ] }, include_blank: true%>
+  <br>
+  <%= form.label :attended_event_id, "Event:" %>
+  <%= form.select :attended_event_id, Event.all.collect { |e| [ e.title, e.id ] }, include_blank: true %>
+  <br>
+  <%= form.label :rsvp, "RSVP:" %>
+  <%= form.check_box :rsvp %>
+  <br>
+  <%= form.submit "Invite" %>
+<% end %>

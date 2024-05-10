@@ -21,6 +21,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by_id(params[:id])
+    @event_attendings = EventAttending.where(attended_event: params[:id])
   end
 
   private
