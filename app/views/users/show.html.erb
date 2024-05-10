@@ -10,7 +10,7 @@
   <ul>
     <% @user_events.each do |event| %>
       <li>
-        <%= event.title + ':' + event.date.to_s + ':' + event.location %>
+        <%= link_to event.title, event_path(event.id) %>
       </li>
     <% end %>
   </ul>
